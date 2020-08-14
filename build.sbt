@@ -4,7 +4,7 @@
  ********************************************************/
 
 name := "ubirch-camel-utils"
-version := "1.0.1"
+version := "1.0.2"
 description := "Camel related utils"
 organization := "com.ubirch.util"
 homepage := Some(url("http://ubirch.com"))
