@@ -33,7 +33,7 @@
         </license>
     </licenses>
 
-    <name>Ubirch Redis Locking Utils [${project.version}]</name>
+    <name>Ubirch Camel Utils [${project.version}]</name>
     <description>Camel related utils</description>
     <url>https://ubirch.com/</url>
 
