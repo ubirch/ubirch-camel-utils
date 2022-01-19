@@ -1,18 +1,20 @@
 package com.ubirch.util.camel
 
-import org.scalatest.{FeatureSpec, Matchers}
+import org.scalatest.featurespec.AnyFeatureSpecLike
+import org.scalatest.matchers.should.Matchers
+
 
 /**
   * author: cvandrei
   * since: 2017-10-09
   */
-class CamelActorUtilSpec extends FeatureSpec
+class CamelActorUtilSpec extends AnyFeatureSpecLike
   with CamelActorUtil
   with Matchers {
 
-  feature("sqsEndpointConsumer()") {
+  Feature("sqsEndpointConsumer()") {
 
-    scenario("without _maxMessagesPerPoll_, without _concurrentConsumers_") {
+    Scenario("without _maxMessagesPerPoll_, without _concurrentConsumers_") {
 
       // prepare
       val config = SqsConfig(
@@ -32,7 +34,7 @@ class CamelActorUtilSpec extends FeatureSpec
 
     }
 
-    scenario("without _maxMessagesPerPoll_, with _concurrentConsumers_ < default") {
+    Scenario("without _maxMessagesPerPoll_, with _concurrentConsumers_ < default") {
 
       // prepare
       val config = SqsConfig(
@@ -53,7 +55,7 @@ class CamelActorUtilSpec extends FeatureSpec
 
     }
 
-    scenario("without _maxMessagesPerPoll_, with _concurrentConsumers_ = default") {
+    Scenario("without _maxMessagesPerPoll_, with _concurrentConsumers_ = default") {
 
       // prepare
       val config = SqsConfig(
@@ -61,8 +63,7 @@ class CamelActorUtilSpec extends FeatureSpec
         region = "aws-region",
         queueOwnerId = "123456",
         accessKey = "myAccessKey",
-        secretAccessKey = "mySecretKey",
-        concurrentConsumers = 2
+        secretAccessKey = "mySecretKey"
       )
 
       // test
@@ -74,7 +75,7 @@ class CamelActorUtilSpec extends FeatureSpec
 
     }
 
-    scenario("without _maxMessagesPerPoll_, with _concurrentConsumers_ > default") {
+    Scenario("without _maxMessagesPerPoll_, with _concurrentConsumers_ > default") {
 
       // prepare
       val config = SqsConfig(
@@ -95,7 +96,7 @@ class CamelActorUtilSpec extends FeatureSpec
 
     }
 
-    scenario("with _maxMessagesPerPoll_, without _concurrentConsumers_") {
+    Scenario("with _maxMessagesPerPoll_, without _concurrentConsumers_") {
 
       // prepare
       val config = SqsConfig(
